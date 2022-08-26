@@ -15,70 +15,136 @@
     <form action="" id="survey-form">
         <label id="name-label" class="mb-3"> 
             Name 
-            <input type="text" id="name" placeholder="Enter your name" required />
+            <input type="text" id="name" placeholder="Enter your name" 
+            name="name" value="" required onblur="handleName()"/>
         </label>
-
         <label id="email-label" class="mb-3"> 
             Email 
-            <input type="text" id="email" placeholder= "Enter your email" required />
+            <input type="text" id="email" placeholder= "Enter your email" name="email" value="" required oninput="handleEmail()"/>
         </label>
-
         <label id="number-label" class="mb-3"> 
             Age (option)
-            <input type="text" id="number" placeholder="Age" min="10" max="99" required />
+            <input type="text" id="number" placeholder="Age" min="10" max="99" name="number" value="" required  oninput="handleNumber()"/>
         </label>
-         <p class="mb-0">Which option best describes your current role?</p>
-        <select name="refer" id="dropdown" class="mb-3">
+        <p class="mb-0">Which option best describes your current role?</p>
+        <select name="refer" id="dropdown" class="mb-3" oninput="handleCurrentRole()">
             <option value="">Select current role</option>
-            <option value="1">Student</option>
-            <option value="2">Full Time Job</option>
-            <option value="3">Full Time Learner</option>
-            <option value="4">Prefer not to say</option>
-            <option value="5">Other</option>
+            <option value="Student">Student</option>
+            <option value="Full Time Job">Full Time Job</option>
+            <option value="Full Time Learner">Full Time Learner</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+            <option value="Other">Other</option>
         </select>
         <p class="mb-0">Would you recommend freeCodeCamp to a friend?</p>
-        <div class="form-control">
-            <input type="radio" id="Definitely" name="language" value="Definitely">
+    
+        <div>
+            <input type="radio" id="Definitely" name="language" value="Definitely" class="form-control" oninput="handleformControl()">
             <label class="radio-text" for="Definitely">Definitely</label>
         </div>
-        <div class="form-control">
-            <input type="radio" id="Maybe" name="language" value="Maybe">
+        <div>
+            <input type="radio" id="Maybe" name="language" value="Maybe"  class="form-control" oninput="handleformControl()">
             <label class="radio-text" for="Maybe">Maybe</label>
         </div>
-        <div class="form-control mb-3">
-            <input type="radio" id="Not sure" name="language" value="Not sure">
-            <label class="radio-text" for="Not sure">Not sure</label>
+        <div class="mb-3">
+            <input type="radio" id="Not_sure" name="language" value="Not sure" class="form-control" oninput="handleformControl()">
+            <label class="radio-text" for="Not_sure">Not sure</label>
         </div>
-        <div>
-            <p class="mb-0">What is your favorite feature of freeCodeCamp?</p>
-            <select name="most-like" id="most-like" class="most-like mb-3" >
-                <option disabled selected value>Select an option </option>
-                <option  value="1">Challenges</option>
-                <option  value="2">Projects</option>
-                <option  value="3">Community</option>
-                <option  value="4">Open source</option>
-            </select>
-        </div>
-            <p>What would you like to see improved? (Check all that apply)</p>
+    <div>
+        <p class="mb-0">What is your favorite feature of freeCodeCamp?</p>
+        <select name="most-like" id="most-like" class="most-like mb-3" oninput="handlefavouriteFeature()">
+            <option disabled selected value>Select an option </option>
+            <option  value="Challenges">Challenges</option>
+            <option  value="Projects">Projects</option>
+            <option  value="Community">Community</option>
+            <option  value="Open Source">Open source</option>
+        </select>
+    </div>
+    <p>What would you like to see improved? (Check all that apply)</p>
     <div class="check">
-            <input type="checkbox" name="terms" class="inline" required /> 
+        <label>
+            <input type="checkbox" value="Front-end Projects" name="terms" class="inline"  oninput="handleCheckbox()"/> 
             Front-end Projects
-    </label></div>
-</div>
-    <div class="check"><input type="checkbox" name="terms" class="inline" required /> Back-end Projects</label></div>
-    <div class="check"><input type="checkbox" name="terms" class="inline" required /> Data Visualization </label></div>
-    <div class="check"><input type="checkbox" name="terms" class="inline" required /> Challenges</label></div>
+        </label>
+    </div>
+        <div class="check">
+            <label>
+            <input type="checkbox" name="terms" class="box" value="Back-end Projects" oninput="handlebox()"/>
+             Back-end Projects
+        </label>
+    </div>
+        <div class="check">
+            <input type="checkbox" name="terms" class="container" value="Data Visualization" oninput="handlecontainer()"/> 
+            Data Visualization 
+        </label>
+    </div>
+   <!-- <div class="check"><input type="checkbox" name="terms" class="inline" required /> Challenges</label></div>
     <div class="check"><input type="checkbox" name="terms" class="inline" required /> Open Source Community</label></div>
     <div class="check"><input type="checkbox" name="terms" class="inline" required /> Gitter help rooms</label></div>
-    <div class="check"><input type="checkbox" name="terms" class="inline" required /> Videos</label></div>
+     <div class="check"><input type="checkbox" name="terms" class="inline" required /> Videos</label></div>
     <div class="check"><input type="checkbox" name="terms" class="inline" required /> City Meetups</label></div>
     <div class="check"><input type="checkbox" name="terms" class="inline" required /> Wiki </label></div>
     <div class="check"><input type="checkbox" name="terms" class="inline" required /> Forum</label></div>
-    <div class="check"><input type="checkbox" name="terms" class="inline" required /> Additional Courses</label></div>
+    <div class="check"><input type="checkbox" name="terms" class="inline" required /> Additional Courses</label></div> -->
             
     <p>Any comments or suggestions </p>
-        <textarea name="bio" id="bio" cols="20" rows="5" placeholder="Enter your comment here..."></textarea>
-        <button id="submit" type="submit">Submit</button>
+        <textarea name="bio" id="bio" cols="20" rows="5" placeholder="Enter your comment here..."oninput="handlecomment()"></textarea>
+        <button id="submit" type="submit">Submit</button> 
     </form>
+
+    <div class="result">
+        <p>Name: <span class="name-text"></span></p>
+        <p>Email:<span class="email-text"></span></p>
+        <p>Age:<span class="age-text"></span></p>
+        <p>Current role:<span class="currentrole-text"></span></p>
+        <p>Recommend:<span class="recommended-text"></span></p>
+        <p>Favorite feature:<span class="favourite-text"></span></p>
+        <p>Improvement:<span class="improvement-text"></span></p>
+        <p>Comment:<span class="comment-text"></span></p>
+ 
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    <form id="form">
+        <label>
+            Firstname:
+            <input name="firstname" value="" class="firstname" oninput="handleFirstname()" />
+        </label><br/><br/>
+        <label>
+            Lastname:
+            <input name="lastname" value="" class="lastname" oninput="handleLastname()" />
+        </label><br/><br/>
+        <label>
+            Email:
+            <input name="email" value="" class="email" oninput="handleEmail()" />
+        </label><br/><br/>
+        <button>Submit</button>
+    </form>
+  
+    <div class="form-result">
+        <p>Firstname: <span class="firstname-text"></span></p>
+        <p>Lastname: <span class="lastname-text"></span></p>
+        <p>Email: <span class="email-text"></span></p>
+    </div>
+    <script src="script.js"></script>
+  
+   <!--
+    This script places a badge on your repl's full-browser view back to your repl's cover
+    page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+    teal, blue, blurple, magenta, pink!
+    -->
+    <!-- <script src="https://replit.com/public/js/replit-badge.js" theme="pink" defer></script>  -->
+
+    <script src="index.js"></script>
 </body>
 </html>
