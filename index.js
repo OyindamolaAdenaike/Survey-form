@@ -9,7 +9,7 @@ const favouriteFeature = document.querySelector('#most-like');
 const comment = document.querySelector('#bio');
 const checkbox = document.querySelector('.inline');
 const box = document.querySelector('.box');
-const container = document.querySelector('.container');
+const result = document.querySelector('.result')
 const form = document.querySelector('#survey-form');
 
 const nametext = document.querySelector('.name-text');
@@ -53,9 +53,7 @@ function handlebox(){
     console.log({box: box.value});
 }
 
-function handlecontainer(){
-    console.log({container: container.value});
-}
+
 // let checkbox = [];
 // checkbox.append()
 
@@ -80,7 +78,7 @@ function handlecontainer(){
  handlecomment();
  handleCheckbox();
  handlebox();
- handlecontainer();
+ 
 
 function submitForm(e){
    e.preventDefault();
@@ -94,7 +92,6 @@ function submitForm(e){
     commenttext.innerHTML = comment.value;
     improvementtext.innerHTML = checkbox.value;
     improvementtext.innerHTML = box.value;
-    improvementtext.innerHTML = container.value;h
     /*let div = document.createElement('div');
     let pName = document.createElement('p');
     pName.innerHTML = name.value;

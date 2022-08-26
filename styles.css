@@ -94,3 +94,36 @@ button{
 .mb-0{
     margin-bottom: 0;
 }
+
+@media only screen and (max-width:768px){
+     h1{
+        padding: .5em 1em;
+        text-align: center;
+     }
+
+     #description{
+        padding: .1em .5em;
+        font-size: 15px;
+     }
+    
+     #survey-form{
+        width: 90%;
+     }
+
+     #submit{
+        padding: .5em;
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #37af65;
+        border-radius: 9px;
+        transition: 1s;
+     } 
+
+     #submit:hover{
+        background-color: #37af65;
+     }
+
+     .result{
+        margin-left: 60px;
+     }
+}
