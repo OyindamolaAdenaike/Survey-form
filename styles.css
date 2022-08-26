@@ -125,5 +125,16 @@ button{
 
      .result{
         margin-left: 60px;
+        padding:2em;
      }
+
+     .radio-text {
+        display: inline;
+    }
+
+    input[type='radio'] {
+        width: unset;
+        min-height: unset;
+        display: inline;
+}
 }
